@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tour de Hanoi - Visualisation</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Tour de Hanoi</h1>
+
+        <p class="subtitle">
+            Visualisation interactive de l’algorithme récursif
+        </p>
+
+        <div class="top-panel">
+
+            <div class="control-group">
+
+                <label>Nombre de disques</label>
+
+                <select id="diskCount">
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                </select>
+
+            </div>
+
+            <div class="control-group">
+
+                <label>Vitesse</label>
+
+                <input type="range" id="speedControl" min="100" max="1500" value="700">
+
+            </div>
+
+            <div class="buttons">
+
+                <button id="startBtn">▶ Démarrer</button>
+
+                <button id="pauseBtn">⏸ Pause</button>
+
+                <button id="resetBtn">🔄 Reset</button>
+
+            </div>
+
+        </div>
+
+        <div class="stats">
+
+            <div class="card">
+                <h3>Mouvements</h3>
+                <span id="moveCounter">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Total minimum</h3>
+                <span id="minMoves">0</span>
+            </div>
+
+            <div class="card">
+                <h3>Complexité</h3>
+                <span>Θ(2ⁿ)</span>
+            </div>
+
+        </div>
+
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <div class="game-area">
+
+            <div class="tower-box">
+
+                <div class="tower" id="tower0"></div>
+
+                <p>A</p>
+
+            </div>
+
+            <div class="tower-box">
+
+                <div class="tower" id="tower1"></div>
+
+                <p>B</p>
+
+            </div>
+
+            <div class="tower-box">
+
+                <div class="tower" id="tower2"></div>
+
+                <p>C</p>
+
+            </div>
+
+        </div>
+
+        <div class="bottom-panel">
+
+            <div class="moves-panel">
+
+                <h2>Historique des mouvements</h2>
+
+                <div id="movesList"></div>
+
+            </div>
+
+            <div class="algo-panel">
+
+                <h2>Algorithme récursif</h2>
+
+                <pre>
+Hanoi(n, A, B, C)
+
+si n == 1
+    déplacer A → C
+
+sinon
+    Hanoi(n-1, A, C, B)
+
+    déplacer A → C
+
+    Hanoi(n-1, B, A, C)
+                </pre>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
