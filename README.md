@@ -60,6 +60,8 @@ Complexité temporelle :
 ## Auteur
 
 Projet réalisé par: 
-                    * BARI Asma
-                    * AZENDOURE Nouhaila
+
+ * BARI Asma
+ 
+ * AZENDOURE Nouhaila
                     
